@@ -1,0 +1,7 @@
+urllib3
+requests
+parsel
+pdfkit
+beautifulsoup4
+html2text
+lxml
