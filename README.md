@@ -16,16 +16,14 @@
 ### 1. 安装Python依赖
 
 ```bash
-pip install requests parsel beautifulsoup4 pdfkit html2text
+pip install -r requirements.txt
 ```
 
-### 2. 安装wkhtmltopdf（可选，用于PDF生成）
+### 2. wkhtmltopdf（已包含，无需额外安装）
 
-PDF转换需要安装 [wkhtmltopdf](https://wkhtmltopdf.org/)：
+项目已包含 wkhtmltopdf 工具（位于 `wkhtmltopdf/bin/` 目录），无需额外安装。脚本会自动检测并使用本地的 wkhtmltopdf。
 
-- 下载地址：https://wkhtmltopdf.org/
-- 安装到默认位置或任何在PATH中的目录
-- 脚本会自动检测安装位置
+如果需要更新或使用其他版本，可以从 [wkhtmltopdf官网](https://wkhtmltopdf.org/) 下载。
 
 ## 使用方法
 
@@ -94,10 +92,9 @@ CSDN可能返回521错误（Cloudflare/服务器过载）。脚本会跳过失�
 
 ### PDF生成失败
 
-- 确保已安装wkhtmltopdf
-- 检查 `write_content()` 方法中的路径配置（第149-173行）
-- 脚本会在常见位置自动检测wkhtmltopdf：
-  - `G:\Dev\wkhtmltopdf\bin\wkhtmltopdf.exe`
+- 项目已包含 wkhtmltopdf（位于 `wkhtmltopdf/bin/` 目录）
+- 脚本会自动检测本地的 wkhtmltopdf：
+  - `D:\LZYchangqishixi\scripts\csdn\wkhtmltopdf\bin\wkhtmltopdf.exe`
   - `C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe`
   - `C:\Program Files (x86)\wkhtmltopdf\bin\wkhtmltopdf.exe`
   - 或在系统PATH中的任何位置
@@ -196,6 +193,7 @@ response = requests.get(url=url, headers=self.headers, verify=False, proxies=pro
 
 ---
 
-**最后更新**: 2026-03-24
+**最后更新**: 2026-04-01
 **Python版本**: 3.9+
 **支持平台**: Windows/Linux/macOS
+**项目位置**: D:\LZYchangqishixi\scripts\csdn
